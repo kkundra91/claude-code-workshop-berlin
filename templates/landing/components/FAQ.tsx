@@ -1,23 +1,22 @@
-import { faq } from "../content";
+import { compatibility } from "../content";
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-muted px-6 py-24">
+    <section id="compatibility" className="bg-muted px-6 py-24 border-b border-ink/10">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-10">
-          {faq.heading}
+        <h2 className="font-serif text-3xl md:text-4xl font-light mb-3">
+          {compatibility.heading}
         </h2>
-        <dl className="space-y-6">
-          {faq.items.map((item, i) => (
-            <div
-              key={i}
-              className="p-6 rounded-2xl bg-paper border border-ink/10"
-            >
-              <dt className="font-semibold text-lg">{item.q}</dt>
-              <dd className="mt-2 text-ink/70 leading-relaxed">{item.a}</dd>
-            </div>
+        <p className="text-ink/60 mb-10">{compatibility.intro}</p>
+        <ul className="space-y-4">
+          {compatibility.items.map((item, i) => (
+            <li key={i} className="flex items-center gap-4 text-ink/75">
+              <span className="w-5 h-px bg-accent shrink-0" />
+              {item}
+            </li>
           ))}
-        </dl>
+        </ul>
+        <p className="mt-10 text-sm text-ink/45 italic">{compatibility.footer}</p>
       </div>
     </section>
   );

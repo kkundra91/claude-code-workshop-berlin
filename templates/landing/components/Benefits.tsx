@@ -1,17 +1,17 @@
-import { benefits } from "../content";
+import { whoFor } from "../content";
 
 export function Benefits() {
   return (
-    <section className="bg-muted px-6 py-24">
-      <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-12">
-          {benefits.heading}
+    <section className="bg-muted px-6 py-24 border-b border-ink/10">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="font-serif text-3xl md:text-4xl font-light mb-10">
+          {whoFor.heading}
         </h2>
-        <ul className="grid md:grid-cols-3 gap-8">
-          {benefits.items.map((b, i) => (
-            <li key={i}>
-              <h3 className="font-semibold text-lg">{b.title}</h3>
-              <p className="mt-2 text-ink/70 leading-relaxed">{b.summary}</p>
+        <ul className="space-y-5">
+          {whoFor.items.map((item, i) => (
+            <li key={i} className="flex items-center gap-4 text-lg text-ink/75">
+              <span className="w-6 h-px bg-accent shrink-0" />
+              {item}
             </li>
           ))}
         </ul>
